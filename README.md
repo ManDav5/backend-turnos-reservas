@@ -62,3 +62,15 @@ La clase ServiceManager gestiona la persistencia en src/data/services.json:
 3. addService(serviceData): Valida campos obligatorios, genera el ID con UUID y agrega el servicio.
 4. updateService(id, updatedData): Actualiza las propiedades recibidas manteniendo el ID intacto.
 5. deleteService(id): Elimina el servicio por su ID y devuelve el registro removido.
+
+---
+
+## Endpoints de la API (`/api/services`)
+
+| Método | Endpoint             | Descripción                                                 | Códigos HTTP |
+| ------ | -------------------- | ----------------------------------------------------------- | ------------ |
+| GET    | `/api/services`      | Lista todos los servicios. Filtros: `?category=` y `?available=` | 200, 500     |
+| GET    | `/api/services/:sid` | Obtiene un servicio por su ID.                              | 200, 404, 500|
+| POST   | `/api/services`      | Crea un servicio (ID generado con UUID).                    | 201, 400, 500|
+| PUT    | `/api/services/:sid` | Actualiza los datos de un servicio sin alterar su ID.       | 200, 404, 500|
+| DELETE | `/api/services/:sid` | Elimina un servicio por su ID.                              | 200, 404, 500|
