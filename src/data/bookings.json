@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "id": "bfbde20c-4761-48d1-ac8c-649150e3c760",
+    "clientName": "Carlos Rossi",
+    "clientEmail": "carlos.rossi@example.com",
+    "date": "2025-06-10",
+    "time": "16:00",
+    "status": "pending",
+    "services": [
+      {
+        "service": "a1847015-12bf-489a-a9a0-a17c4ee6fac9",
+        "quantity": 2
+      }
+    ]
+  }
+]

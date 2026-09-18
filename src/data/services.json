@@ -1,1 +1,11 @@
-[]
+[
+  {
+    "id": "a1847015-12bf-489a-a9a0-a17c4ee6fac9",
+    "name": "Asesoría en diseño de mobiliario",
+    "description": "Levantamiento de información, entrevista y propuesta básica",
+    "duration": 6,
+    "price": 250,
+    "category": "Diseño de Mobiliario",
+    "available": true
+  }
+]
