@@ -52,13 +52,34 @@ router.post('/', async (req, res) => {
       });
     }
 
+    const parsedDuration = Number(duration);
+    const parsedPrice = Number(price);
+    
+    if (Number.isNaN(parsedDuration) || parsedDuration <= 0) {
+      return res.status(400).json({
+        status: 'error',
+        message: 'duration debe ser un número válido mayor a 0'
+      });
+    }
+
+    if (Number.isNaN(parsedPrice) || parsedPrice <= 0) {
+      return res.status(400).json({
+        status: 'error',
+        message: 'price debe ser un número válido mayor a 0'
+      });
+    }
+
+    const parsedAvailable = available !== undefined 
+      ? (available === true || available === 'true') 
+      : true;  
+
     const newService = await serviceManager.addService({
-      name,
-      description,
-      duration: Number(duration),
-      price: Number(price),
-      category,
-      available: available !== undefined ? Boolean(available) : true
+      name: name.trim(),
+      description: description.trim(),
+      duration: parsedDuration,
+      price: parsedPrice,
+      category: category.trim(),
+      available: parsedAvailable
     });
 
     res.status(201).json({ status: 'success', data: newService });
